@@ -1,0 +1,29 @@
+docker build -t node-app-image .
+
+docker run -v $(pwd):/app:ro --env-file ./.env -p 3000:4000 -d --name node-app node-app-image
+
+docker ps        
+
+docker exec -it node-app bash    
+
+docker rm node-app -f  
+
+docker image ls 
+
+docker image rm 047a67baff97->id  
+
+docker volume ls  
+
+docker volume prune   
+
+docker rm node-app -fv  
+
+docker-compose up --help 
+
+docker-compose up -d  
+
+docker-compose up -d --build
+
+docker-compose down 
+
+docker-compose down -v    
